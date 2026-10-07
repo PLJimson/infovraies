@@ -1,0 +1,1769 @@
+/* =========================================================
+   INFOVRAIES
+   MyCss.css
+   Version sécurisée pour toutes les pages
+========================================================= */
+
+
+/* =========================================================
+   1. RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+    background-color: #f5f6f7;
+    color: #333;
+
+    line-height: 1.6;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   2. HEADER
+========================================================= */
+
+/*
+   Header utilisé par :
+   - Notre_mission.html
+   - Contact.html
+   - Temoignages.html
+   - index.html
+*/
+
+.header {
+    width: 100%;
+
+    min-height: 140px;
+
+    padding: 20px;
+
+    background-color: #f4f4f4;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/*
+   Les anciennes pages utilisent directement :
+
+   <header class="header">
+       <h1>...</h1>
+   </header>
+
+   On garde donc le h1 centré sans dépendre de
+   .header-content.
+*/
+
+.header h1 {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    color: #00796b;
+
+    font-size: 32px;
+
+    line-height: 1.3;
+
+    text-align: center;
+}
+
+
+/*
+   index.html utilise également .header-content
+*/
+
+.header-content {
+    width: 100%;
+    max-width: 1400px;
+
+    min-height: 100px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* Logo index.html */
+
+.circle-img {
+    display: block;
+
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+/* Date index.html */
+
+#current-date {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    font-size: 14px;
+
+    color: #555;
+}
+
+
+/* Boutons Login / Sign Up */
+
+.top-right-buttons {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.top-right-buttons a {
+    text-decoration: none;
+}
+
+.login-btn,
+.signup-btn {
+    padding: 8px 14px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.login-btn {
+    background-color: #00796b;
+    color: white;
+}
+
+.signup-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.login-btn:hover {
+    background-color: #005f54;
+}
+
+.signup-btn:hover {
+    background-color: #217dbb;
+}
+
+
+/* =========================================================
+   3. NAVIGATION
+========================================================= */
+
+.nav {
+    width: 100%;
+
+    min-height: 54px;
+
+    position: relative;
+
+    z-index: 1000;
+
+    background-color: #00796b;
+}
+
+
+/*
+   Toutes les pages utilisent :
+
+   <div class="nav-menu">
+
+   et non ul/li.
+*/
+
+.nav-menu {
+    width: 100%;
+
+    min-height: 54px;
+
+    padding: 8px 20px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+}
+
+.nav-menu a {
+    display: block;
+
+    padding: 10px 15px;
+
+    color: white;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   4. MENU HAMBURGER
+========================================================= */
+
+.menu-toggle {
+    display: none;
+
+    width: 50px;
+    height: 50px;
+
+    margin: 0;
+
+    padding: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+
+    width: 30px;
+    height: 3px;
+
+    margin: 6px 0;
+
+    background-color: white;
+
+    border-radius: 3px;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Transformation en X */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   5. STRUCTURE DES ANCIENNES PAGES
+   Contact / Mission / Témoignages
+========================================================= */
+
+/*
+   IMPORTANT :
+
+   Ces trois pages utilisent :
+
+   <main>
+       <div class="page-layout">
+
+   On conserve donc cette classe séparément de
+   .main-content utilisée par index.html.
+*/
+
+.page-layout {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: 280px minmax(0, 1fr);
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   6. STRUCTURE INDEX.HTML
+========================================================= */
+
+/*
+   index.html utilise :
+
+   <main class="main-content">
+
+   On ne mélange PAS cette structure avec .page-layout.
+*/
+
+.main-content {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    display: grid;
+
+    grid-template-columns: 280px minmax(0, 1fr);
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   7. COLONNE PUBLICITÉS / VIDÉOS
+========================================================= */
+
+/*
+   Utilisée par .page-layout ET .main-content.
+*/
+
+.vertical-box {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    padding: 10px;
+
+    background-color: #fafafa;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    /*
+       Important :
+       sticky uniquement sur ordinateur.
+    */
+
+    position: sticky;
+
+    top: 20px;
+}
+
+
+/*
+   Dans les deux layouts :
+   la colonne vidéo est la première colonne.
+*/
+
+.page-layout > .vertical-box,
+.main-content > .vertical-box {
+    grid-column: 1;
+}
+
+
+/* =========================================================
+   8. BLOCS VIDÉO
+========================================================= */
+
+.box-item {
+    width: 100%;
+
+    padding: 15px;
+
+    background-color: #e0f0ff;
+
+    border: 1px solid #999;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+
+.box-item p {
+    margin-bottom: 10px;
+}
+
+.box-item video {
+    display: block;
+
+    width: 100%;
+
+    max-width: 250px;
+
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   9. COLONNE CONTENU
+========================================================= */
+
+/*
+   .box-info existe dans les trois anciennes pages
+   et dans index.html.
+
+   On lui donne uniquement des propriétés neutres.
+*/
+
+.box-info {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 20px;
+
+    background-color: #f5f6f7;
+
+    border-radius: 8px;
+}
+
+
+/*
+   Positionnement dans les deux structures.
+*/
+
+.page-layout > .box-info,
+.main-content > .box-info {
+    grid-column: 2;
+}
+
+
+/* =========================================================
+   10. PAGE NOTRE MISSION
+========================================================= */
+
+.mission-section {
+    width: 100%;
+}
+
+.mission-title {
+    margin-bottom: 30px;
+
+    color: #00796b;
+
+    text-align: center;
+}
+
+.mission {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.mission h2,
+.mission h3 {
+    margin-bottom: 15px;
+
+    color: #00796b;
+}
+
+.mission p {
+    margin-bottom: 0;
+}
+
+.mission-conclusion {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background-color: #f0f8ff;
+
+    border-left: 4px solid #3498db;
+
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   11. PAGE CONTACT
+========================================================= */
+
+.contact-section {
+    width: 100%;
+}
+
+.contact-section > h2 {
+    margin-bottom: 20px;
+
+    color: #00796b;
+}
+
+.contact-intro {
+    margin-bottom: 25px;
+}
+
+
+/* Formulaire contact */
+
+.contact-form {
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+.form-group {
+    width: 100%;
+
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #333;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   12. FORMULAIRES
+========================================================= */
+
+form {
+    width: 100%;
+}
+
+input,
+textarea,
+select {
+    display: block;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 12px;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    color: #333;
+
+    background-color: white;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #00796b;
+
+    box-shadow: 0 0 0 2px rgba(0, 121, 107, 0.12);
+}
+
+textarea {
+    min-height: 150px;
+
+    resize: vertical;
+}
+
+
+/* =========================================================
+   13. BOUTON CONTACT
+========================================================= */
+
+/*
+   Ton Contact.html utilise .contact-button.
+*/
+
+.contact-button {
+    display: block;
+
+    width: 100%;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #00796b;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.contact-button:hover {
+    background-color: #005f54;
+}
+
+
+/* =========================================================
+   14. INFORMATIONS CONTACT
+========================================================= */
+
+.contact-info {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.contact-info h3 {
+    margin-bottom: 15px;
+
+    color: #00796b;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+}
+
+.contact-info a {
+    color: #00796b;
+
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   15. RÉSEAUX SOCIAUX - CONTACT
+========================================================= */
+
+/*
+   Attention :
+
+   Dans Contact.html :
+
+   .social-links
+       h3
+       .social-links-list
+           a
+           a
+           a
+           a
+
+   On ne transforme donc PAS .social-links directement
+   en colonne ou en boutons.
+*/
+
+.social-links {
+    width: 100%;
+
+    margin-top: 30px;
+}
+
+.social-links > h3 {
+    margin-bottom: 15px;
+
+    color: #00796b;
+}
+
+.social-links-list {
+    width: 100%;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.social-links-list a {
+    display: inline-block;
+
+    padding: 10px 15px;
+
+    color: white;
+
+    background-color: #00796b;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    transition: background-color 0.3s ease;
+}
+
+.social-links-list a:hover {
+    background-color: #005f54;
+}
+
+
+/* =========================================================
+   16. BLOCS TEXTE
+========================================================= */
+
+.boite-texte {
+    width: 100%;
+
+    margin: 20px auto;
+
+    padding: 20px;
+
+    background-color: #f0f8ff;
+
+    border: 2px solid #3498db;
+
+    border-radius: 8px;
+
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.boite-texte h2,
+.boite-texte h3 {
+    margin-bottom: 15px;
+
+    color: #00796b;
+}
+
+.boite-texte p {
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   17. NEWS FEED / TÉMOIGNAGES
+========================================================= */
+
+.news-feed {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.news-feed h2,
+.news-feed h3 {
+    margin-bottom: 15px;
+
+    color: #00796b;
+}
+
+.news-feed p {
+    margin-bottom: 10px;
+}
+
+.news-feed a {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #1a0dab;
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.5;
+
+    text-decoration: none;
+}
+
+.news-feed a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   18. PAGE LOGIN
+========================================================= */
+
+.login-section {
+    width: 100%;
+}
+
+.login-container {
+    width: 100%;
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+
+    color: #00796b;
+
+    text-align: center;
+}
+
+.form-footer {
+    margin-top: 20px;
+
+    text-align: center;
+}
+
+.form-footer a {
+    color: #00796b;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   19. PAGE SIGN-UP
+========================================================= */
+
+.signup-section {
+    width: 100%;
+}
+
+.signup-container {
+    width: 100%;
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.signup-container h2 {
+    margin-bottom: 20px;
+
+    color: #00796b;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   20. BOUTONS LOGIN / SIGN-UP
+========================================================= */
+
+.login-button,
+.signup-button,
+.submit-button {
+    width: 100%;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #00796b;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.signup-button:hover,
+.submit-button:hover {
+    background-color: #005f54;
+}
+
+.cancel-button {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 10px;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: #777;
+
+    color: white;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    text-decoration: none;
+}
+
+.cancel-button:hover {
+    background-color: #555;
+}
+
+
+/* =========================================================
+   21. TÉMOIGNAGES
+========================================================= */
+
+.testimonials-section {
+    width: 100%;
+}
+
+.testimonials-title {
+    margin-bottom: 30px;
+
+    color: #00796b;
+
+    text-align: center;
+}
+
+.testimonial {
+    width: 100%;
+
+    margin-bottom: 20px;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial p {
+    margin-bottom: 10px;
+}
+
+.testimonial-author {
+    margin-top: 15px;
+
+    color: #00796b;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   22. FOOTER
+========================================================= */
+
+footer {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 30px 20px;
+
+    background-color: #00796b;
+
+    color: white;
+
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: white;
+
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-content {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.footer-social {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+
+/* =========================================================
+   23. ARTICLES DE INDEX.HTML UNIQUEMENT
+========================================================= */
+
+/*
+   Ces classes existent dans index.html :
+
+   .container
+   .image-left
+   .text
+
+   Elles ne sont PAS utilisées dans les trois pages
+   que tu viens de fournir.
+*/
+
+.main-content .container {
+    width: 100%;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+    padding: 25px;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+.main-content .image-left {
+    flex: 0 0 220px;
+
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+.main-content .text {
+    flex: 1;
+
+    min-width: 0;
+
+    overflow-wrap: break-word;
+}
+
+.main-content .text h2 {
+    margin-bottom: 15px;
+
+    color: #00796b;
+}
+
+.main-content .text p {
+    margin-bottom: 15px;
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   24. TABLETTES
+========================================================= */
+
+@media (max-width: 1024px) {
+
+    /* -----------------------------------------------------
+       STRUCTURES PRINCIPALES
+    ----------------------------------------------------- */
+
+    .page-layout,
+    .main-content {
+        grid-template-columns: 220px minmax(0, 1fr);
+
+        padding: 20px;
+
+        gap: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       VIDÉOS
+    ----------------------------------------------------- */
+
+    .vertical-box {
+        top: 15px;
+    }
+
+    .box-item {
+        padding: 10px;
+    }
+
+    .box-item video {
+        max-width: 200px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENU
+    ----------------------------------------------------- */
+
+    .box-info {
+        padding: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       INDEX
+    ----------------------------------------------------- */
+
+    .main-content .container {
+        gap: 18px;
+
+        padding: 20px;
+    }
+
+    .main-content .image-left {
+        flex: 0 0 180px;
+
+        width: 180px;
+        height: 180px;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGIN / SIGNUP
+    ----------------------------------------------------- */
+
+    .login-container,
+    .signup-container {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   25. MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .header {
+        min-height: 110px;
+
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+
+    /* Header index */
+
+    .header-content {
+        min-height: 80px;
+    }
+
+    .circle-img {
+        width: 85px;
+        height: 85px;
+    }
+
+    #current-date {
+        left: 0;
+        bottom: -5px;
+
+        font-size: 11px;
+    }
+
+    .top-right-buttons {
+        top: 0;
+        right: 0;
+
+        gap: 5px;
+    }
+
+    .login-btn,
+    .signup-btn {
+        padding: 6px 9px;
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       NAVIGATION
+    ===================================================== */
+
+    .nav {
+        min-height: 50px;
+
+        text-align: right;
+    }
+
+    .menu-toggle {
+        display: block;
+
+        margin-left: auto;
+
+        margin-right: 10px;
+    }
+
+    .nav-menu {
+        display: none;
+
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 10px 15px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        justify-content: flex-start;
+
+        gap: 3px;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+
+        padding: 12px 15px;
+
+        text-align: right;
+
+        border-radius: 5px;
+    }
+
+
+    /* =====================================================
+       PAGE-LAYOUT
+       Contact / Mission / Témoignages
+    ===================================================== */
+
+    .page-layout {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 15px;
+
+        gap: 20px;
+    }
+
+
+    /*
+       Sur téléphone :
+       contenu d'abord
+       vidéos ensuite
+    */
+
+    .page-layout > .box-info {
+        order: 1;
+
+        width: 100%;
+
+        padding: 10px;
+    }
+
+    .page-layout > .vertical-box {
+        order: 2;
+
+        width: 100%;
+
+        position: static;
+
+        padding: 10px;
+    }
+
+
+    /* =====================================================
+       INDEX
+    ===================================================== */
+
+    .main-content {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        padding: 15px;
+
+        gap: 20px;
+    }
+
+    .main-content > .box-info {
+        order: 1;
+
+        width: 100%;
+
+        padding: 10px;
+    }
+
+    .main-content > .vertical-box {
+        order: 2;
+
+        width: 100%;
+
+        position: static;
+
+        padding: 10px;
+    }
+
+
+    /* =====================================================
+       ARTICLES INDEX
+    ===================================================== */
+
+    .main-content .container {
+        width: 100%;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        margin-bottom: 20px;
+
+        padding: 18px;
+    }
+
+    .main-content .image-left {
+        flex: none;
+
+        width: 100%;
+
+        max-width: 300px;
+
+        height: auto;
+
+        margin: 0 auto;
+    }
+
+    .main-content .text {
+        width: 100%;
+    }
+
+    .main-content .text h2 {
+        font-size: 22px;
+
+        text-align: center;
+    }
+
+    .main-content .text p {
+        text-align: left;
+    }
+
+
+    /* =====================================================
+       VIDÉOS
+    ===================================================== */
+
+    .box-item {
+        width: 100%;
+
+        padding: 15px;
+    }
+
+    .box-item video {
+        width: 100%;
+
+        max-width: 100%;
+
+        height: auto;
+    }
+
+
+    /* =====================================================
+       MISSION
+    ===================================================== */
+
+    .mission-title {
+        margin-bottom: 20px;
+
+        font-size: 24px;
+    }
+
+    .mission {
+        padding: 18px;
+    }
+
+    .mission-conclusion {
+        padding: 18px;
+    }
+
+
+    /* =====================================================
+       CONTACT
+    ===================================================== */
+
+    .contact-form,
+    .contact-info {
+        width: 100%;
+    }
+
+    .contact-info {
+        padding: 18px;
+    }
+
+    .social-links-list {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .social-links-list a {
+        width: 100%;
+
+        text-align: center;
+    }
+
+
+    /* =====================================================
+       TÉMOIGNAGES
+    ===================================================== */
+
+    .boite-texte {
+        width: 100%;
+
+        margin: 15px auto;
+
+        padding: 15px;
+    }
+
+    .news-feed {
+        width: 100%;
+
+        padding: 12px;
+    }
+
+
+    /* =====================================================
+       LOGIN / SIGNUP
+    ===================================================== */
+
+    .login-container,
+    .signup-container {
+        width: 100%;
+
+        padding: 20px 15px;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+        padding: 25px 15px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        gap: 8px;
+    }
+
+    .footer-social {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   26. PETITS TÉLÉPHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+    /* -----------------------------------------------------
+       HEADER
+    ----------------------------------------------------- */
+
+    .header {
+        min-height: 90px;
+
+        padding: 10px;
+    }
+
+    .header h1 {
+        font-size: 20px;
+    }
+
+
+    /* Header index */
+
+    .header-content {
+        min-height: 65px;
+    }
+
+    .circle-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .login-btn,
+    .signup-btn {
+        padding: 5px 7px;
+
+        font-size: 11px;
+    }
+
+    #current-date {
+        font-size: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       STRUCTURES
+    ----------------------------------------------------- */
+
+    .page-layout,
+    .main-content {
+        padding: 10px;
+
+        gap: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENU
+    ----------------------------------------------------- */
+
+    .box-info {
+        padding: 8px;
+    }
+
+    .vertical-box {
+        padding: 8px;
+    }
+
+
+    /* -----------------------------------------------------
+       INDEX
+    ----------------------------------------------------- */
+
+    .main-content .container {
+        padding: 12px;
+
+        gap: 12px;
+    }
+
+    .main-content .image-left {
+        max-width: 250px;
+    }
+
+    .main-content .text h2 {
+        font-size: 20px;
+    }
+
+
+    /* -----------------------------------------------------
+       VIDÉOS
+    ----------------------------------------------------- */
+
+    .box-item {
+        padding: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       TÉMOIGNAGES
+    ----------------------------------------------------- */
+
+    .boite-texte {
+        padding: 12px;
+    }
+
+    .news-feed {
+        padding: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       MISSION
+    ----------------------------------------------------- */
+
+    .mission {
+        padding: 15px;
+    }
+
+    .mission-conclusion {
+        padding: 15px;
+    }
+
+
+    /* -----------------------------------------------------
+       LOGIN / SIGNUP
+    ----------------------------------------------------- */
+
+    .login-container,
+    .signup-container {
+        padding: 18px 12px;
+    }
+
+
+    /* -----------------------------------------------------
+       FORMULAIRES
+    ----------------------------------------------------- */
+
+    input,
+    textarea,
+    select {
+        font-size: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       FOOTER
+    ----------------------------------------------------- */
+
+    footer {
+        padding: 20px 10px;
+    }
+}

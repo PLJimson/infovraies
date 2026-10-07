@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Infovraies || Contact</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../css/MyCss.css">
+
+    <!-- Animate.css -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+
+
+<body class="body">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header animate__animated animate__bounce">
+
+        <h1>
+            POSEZ VOTRE QUESTION OU FAITES VOTRE COMMENTAIRE
+        </h1>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="nav">
+
+        <!-- Bouton hamburger -->
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <!-- Menu -->
+
+        <div class="nav-menu" id="main-menu">
+
+            <a href="../index.html">
+                Accueil
+            </a>
+			  <a href="factual.html">
+        <i class="fa-solid fa-circle-info"></i>
+        Factuel
+      </a>
+
+            <a href="SI_AI_Expansion.html">
+                SI/AI en Expansio
+            </a>
+
+            <a href="Notre_mission.html">
+                Notre Mission
+            </a>
+
+            <a href="Temoignages.html">
+                Témoignages
+            </a>
+
+            <a href="Contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= CONTENU PRINCIPAL ================= -->
+
+    <main>
+
+        <div class="page-layout">
+
+
+            <!-- ================= PUBLICITÉS À GAUCHE ================= -->
+
+            <aside class="vertical-box">
+
+                <div class="box-item">
+
+                    <p>
+                        Un bref texte de la pub 1.
+                    </p>
+
+                    <video
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source
+                            src="../videos/video_sample1.mp4"
+                            type="video/mp4"
+                        >
+
+                        Votre navigateur ne supporte pas la lecture vidéo.
+
+                    </video>
+
+                </div>
+
+
+                <div class="box-item">
+
+                    <p>
+                        Un bref texte de la pub 2.
+                    </p>
+
+                    <video
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source
+                            src="../videos/video_sample2.mp4"
+                            type="video/mp4"
+                        >
+
+                        Votre navigateur ne supporte pas la lecture vidéo.
+
+                    </video>
+
+                </div>
+
+
+                <div class="box-item">
+
+                    <p>
+                        Un bref texte de la pub 3.
+                    </p>
+
+                    <video
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source
+                            src="../videos/video_sample3.mp4"
+                            type="video/mp4"
+                        >
+
+                        Votre navigateur ne supporte pas la lecture vidéo.
+
+                    </video>
+
+                </div>
+
+            </aside>
+
+
+            <!-- ================= CONTACT À DROITE ================= -->
+
+            <section class="box-info contact-section">
+
+                <h2>
+                    📩 Nous aimerions avoir de vos nouvelles !
+                </h2>
+
+                <p class="contact-intro">
+                    Si vous avez une question, une suggestion ou souhaitez
+                    collaborer, n'hésitez pas à nous laisser un message.
+                    Nous vous répondrons dans les plus brefs délais.
+                </p>
+
+
+                <!-- ================= FORMULAIRE ================= -->
+
+                <form
+                    action="mailto:pierrelouis.jimson@gmail.com"
+                    method="post"
+                    enctype="text/plain"
+                    class="contact-form"
+                >
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Nom
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Votre nom"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Adresse e-mail
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Votre adresse e-mail"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="subject">
+                            Sujet
+                        </label>
+
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="Sujet de votre message"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="7"
+                            placeholder="Écrivez votre message ici..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="contact-button"
+                    >
+                        Envoyer le message
+                    </button>
+
+                </form>
+
+
+                <!-- ================= INFORMATIONS ================= -->
+
+                <div class="contact-info">
+
+                    <h3>
+                        📞 Informations supplémentaires
+                    </h3>
+
+                    <p>
+                        <strong>Email :</strong>
+
+                        <a href="mailto:pierrelouis.jimson@gmail.com">
+                            pierrelouis.jimson@gmail.com
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Téléphone :</strong>
+
+                        <a href="tel:+15619036367">
+                            +1 561 9036367
+                        </a>
+                    </p>
+
+                    <p>
+                        <strong>Adresse :</strong>
+                        1100 Via Lugano Cr Boynton B, USA
+                    </p>
+
+                </div>
+
+
+                <!-- ================= RÉSEAUX SOCIAUX ================= -->
+
+                <div class="social-links">
+
+                    <h3>
+                        🌐 Suivez-nous
+                    </h3>
+
+                    <div class="social-links-list">
+
+                        <a
+                            href="https://facebook.com/monprofil"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-facebook"></i>
+                            Facebook
+                        </a>
+
+                        <a
+                            href="https://twitter.com/monprofil"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-twitter"></i>
+                            Twitter
+                        </a>
+
+                        <a
+                            href="https://instagram.com/monprofil"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-instagram"></i>
+                            Instagram
+                        </a>
+
+                        <a
+                            href="https://linkedin.com/in/monprofil"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fab fa-linkedin"></i>
+                            LinkedIn
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            &copy; 2025 InfoVraies. Tous droits réservés.
+        </p>
+
+        <p>
+
+            <a
+                href="https://www.facebook.com/profile.php?id=61561701701051"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fab fa-facebook-square"></i>
+                Facebook
+            </a>
+
+            &nbsp;||&nbsp;
+
+            <a
+                href="https://www.youtube.com/@InfoVraies"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fab fa-youtube"></i>
+                YouTube
+            </a>
+
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT MENU ================= -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const mainMenu =
+            document.getElementById("main-menu");
+
+
+        /* Ouvrir / fermer le menu */
+
+        menuToggle.addEventListener("click", function () {
+
+            const menuOuvert =
+                mainMenu.classList.toggle("active");
+
+            menuToggle.classList.toggle("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                menuOuvert
+            );
+
+        });
+
+
+        /* Fermer le menu après avoir cliqué sur un lien */
+
+        const menuLinks =
+            mainMenu.querySelectorAll("a");
+
+        menuLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mainMenu.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+        /* Fermer le menu en cliquant à l'extérieur */
+
+        document.addEventListener("click", function (event) {
+
+            const clicDansMenu =
+                mainMenu.contains(event.target);
+
+            const clicSurBouton =
+                menuToggle.contains(event.target);
+
+            if (!clicDansMenu && !clicSurBouton) {
+
+                mainMenu.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Infovraies || Inscription</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../css/MyCss.css">
+
+    <!-- Animate.css -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    >
+</head>
+
+<body class="body">
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header animate__animated animate__bounce">
+
+        <h1>
+            LE TOUR DU MONDE
+        </h1>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav class="nav">
+
+        <!-- Bouton hamburger -->
+
+        <button
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="main-menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <!-- Menu -->
+
+         <div class="nav-menu" id="main-menu">
+
+      <a href="../index.html">
+        <i class="fa-solid fa-house"></i>
+        Accueil
+      </a>
+	    <a href="factual.html">
+        <i class="fa-solid fa-circle-info"></i>
+        Factuel
+      </a>
+
+      <a href="SI_AI_Expansion.html">
+        <i class="fa-solid fa-microchip"></i>
+        SI/AI en Expansion
+      </a>
+
+      <a href="Notre_mission.html">
+        <i class="fa-solid fa-bullseye"></i>
+        Notre Mission
+      </a>
+
+      <a href="Temoignages.html">
+        <i class="fa-solid fa-comments"></i>
+        Témoignages
+      </a>
+
+      <a href="Contact.html">
+        <i class="fa-solid fa-envelope"></i>
+        Contact
+      </a>
+
+    </div>
+
+    </nav>
+
+
+
+    <!-- ================= CONTENU PRINCIPAL ================= -->
+
+    <main>
+
+        <div class="page-layout">
+
+
+            <!-- ================= PUBLICITÉS À GAUCHE ================= -->
+
+            <aside class="vertical-box">
+
+                <div class="box-item">
+
+                    <p>
+                        Un bref texte de la pub 1.
+                    </p>
+
+                    <video
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source
+                            src="../videos/video_sample1.mp4"
+                            type="video/mp4"
+                        >
+
+                        Votre navigateur ne supporte pas la lecture vidéo.
+
+                    </video>
+
+                </div>
+
+
+                <div class="box-item">
+
+                    <p>
+                        Un bref texte de la pub 2.
+                    </p>
+
+                    <video
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source
+                            src="../videos/video_sample2.mp4"
+                            type="video/mp4"
+                        >
+
+                        Votre navigateur ne supporte pas la lecture vidéo.
+
+                    </video>
+
+                </div>
+
+
+                <div class="box-item">
+
+                    <p>
+                        Un bref texte de la pub 3.
+                    </p>
+
+                    <video
+                        controls
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                    >
+                        <source
+                            src="../videos/video_sample3.mp4"
+                            type="video/mp4"
+                        >
+
+                        Votre navigateur ne supporte pas la lecture vidéo.
+
+                    </video>
+
+                </div>
+
+            </aside>
+
+
+            <!-- ================= FORMULAIRE À DROITE ================= -->
+
+            <section class="box-info signup-section">
+
+                <div class="signup-container">
+
+                    <h2>
+                        📝 Créer un compte
+                    </h2>
+
+                    <p class="signup-intro">
+                        Rejoignez la communauté InfoVraies.
+                    </p>
+
+
+                    <form
+                        action="/signup"
+                        method="POST"
+                        class="signup-form"
+                    >
+
+                        <!-- Username -->
+
+                        <div class="form-group">
+
+                            <label for="username">
+                                Nom d'utilisateur
+                            </label>
+
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                placeholder="Votre nom d'utilisateur"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Adresse e-mail
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Votre adresse e-mail"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Password -->
+
+                        <div class="form-group">
+
+                            <label for="password">
+                                Mot de passe
+                            </label>
+
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                placeholder="Votre mot de passe"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Confirm password -->
+
+                        <div class="form-group">
+
+                            <label for="confirm-password">
+                                Confirmer le mot de passe
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirm-password"
+                                name="confirm_password"
+                                placeholder="Confirmez votre mot de passe"
+                                autocomplete="new-password"
+                                required
+                            >
+
+                        </div>
+
+
+                        <!-- Bouton inscription -->
+
+                        <button
+                            type="submit"
+                            class="signup-button"
+                        >
+                            Créer mon compte
+                        </button>
+
+
+                        <!-- Bouton annuler -->
+
+                        <a
+                            href="../index.html"
+                            class="cancel-button"
+                        >
+                            Annuler
+                        </a>
+
+                    </form>
+
+
+                    <!-- Connexion -->
+
+                    <div class="form-footer">
+
+                        <p>
+                            Vous avez déjà un compte ?
+                        </p>
+
+                        <a href="login.html">
+                            Se connecter
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <p>
+            &copy; 2025 InfoVraies. Tous droits réservés.
+        </p>
+
+        <p>
+
+            <a
+                href="https://www.facebook.com/profile.php?id=61561701701051"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fab fa-facebook-square"></i>
+                Facebook
+            </a>
+
+            &nbsp;||&nbsp;
+
+            <a
+                href="https://www.youtube.com/@InfoVraies"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class="fab fa-youtube"></i>
+                YouTube
+            </a>
+
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT MENU ================= -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const mainMenu =
+            document.getElementById("main-menu");
+
+
+        /* Ouvrir / fermer le menu */
+
+        menuToggle.addEventListener("click", function () {
+
+            const menuOuvert =
+                mainMenu.classList.toggle("active");
+
+            menuToggle.classList.toggle("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                menuOuvert
+            );
+
+        });
+
+
+        /* Fermer le menu après avoir cliqué sur un lien */
+
+        const menuLinks =
+            mainMenu.querySelectorAll("a");
+
+        menuLinks.forEach(function (link) {
+
+            link.addEventListener("click", function () {
+
+                mainMenu.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            });
+
+        });
+
+
+        /* Fermer le menu en cliquant à l'extérieur */
+
+        document.addEventListener("click", function (event) {
+
+            const clicDansMenu =
+                mainMenu.contains(event.target);
+
+            const clicSurBouton =
+                menuToggle.contains(event.target);
+
+            if (!clicDansMenu && !clicSurBouton) {
+
+                mainMenu.classList.remove("active");
+
+                menuToggle.classList.remove("active");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
