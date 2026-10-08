@@ -67,6 +67,23 @@ body {
 }
 
 
+
+/*=========================pour l'entete de la index 8/oct/2026 ======================== */
+.header-banner {
+    width: 100%;
+    line-height: 0;
+    background: #06193a;
+    text-align: center;
+}
+
+.header-banner img {
+    display: inline-block;
+    width: 100%;
+    max-width: 1000px;
+    height: auto;          /* pas de max-height, pas de object-fit */
+}
+/*======================================================*/
+
 /*
    Les anciennes pages utilisent directement :
 
