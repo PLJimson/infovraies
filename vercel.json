@@ -3,8 +3,8 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/:page",
-      "destination": "/html/:page.html"
+      "source": "/factual",
+      "destination": "/html/factual"
     }
   ]
 }
