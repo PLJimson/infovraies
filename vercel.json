@@ -1,10 +1,11 @@
+
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/test-pagel",
-      "destination": "/html/factual.html"
+      "source": "/factual",
+      "destination": "/html/factual"
     }
   ]
 }
