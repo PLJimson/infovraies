@@ -18,8 +18,8 @@
     }
     ,
     {
-      "source": "/temoignage",
-      "destination": "/html/temoignage"
+      "source": "/temoignages",
+      "destination": "/html/temoignages"
     }
     ,
     {
