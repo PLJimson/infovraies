@@ -3,16 +3,8 @@
   "cleanUrls": true,
   "rewrites": [
     {
-      "source": "/index",
-      "destination": "/html/index.html"
-    },
-    {
-      "source": "/factual",
-      "destination": "/html/factual.html"
-    },
-    {
-      "source": "/si_ai_expansion",
-      "destination": "/html/si_ai_expansion.html"
+      "source": "/:page",
+      "destination": "/html/:page.html"
     }
   ]
 }
