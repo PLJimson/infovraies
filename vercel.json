@@ -7,6 +7,24 @@
     {
       "source": "/factual",
       "destination": "/html/factual"
+    },
+    {
+      "source": "/si_ai_expansion",
+      "destination": "/html/si_ai_expansion"
+    },
+    {
+      "source": "/mission",
+      "destination": "/html/notre_mission"
+    }
+    ,
+    {
+      "source": "/temoignage",
+      "destination": "/html/temoignage"
+    }
+    ,
+    {
+      "source": "/contact",
+      "destination": "/html/contact"
     }
   ]
 }
