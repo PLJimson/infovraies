@@ -9,6 +9,10 @@
     {
       "source": "/factual",
       "destination": "/html/factual.html"
+    },
+    {
+      "source": "/si_ai_expansion",
+      "destination": "/html/si_ai_expansion.html"
     }
   ]
 }
