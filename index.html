@@ -7,6 +7,37 @@
 
     <title>Infovraies || Index</title>
 
+				<!--============================ des balises pour le partage sur les reseaux ================= -->
+	<!-- Open Graph : LinkedIn et autres réseaux -->
+<meta property="og:type"
+	content="article">
+<meta property="og:title" 
+	content="Le monde en première page">
+<meta property="og:description" 
+	content="Ce que disent les grands journaux du monde">
+<meta property="og:image" 
+	content="https://infovraies.info/Images/globalnews.png">
+<meta property="og:image:secure_url" 
+	content="https://infovraies.info/Images/globalnews.png">
+<meta property="og:image:type" content="image/png">
+<!--
+	<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+-->
+<!-- X (anciennement Twitter) -->
+<meta name="twitter:card" 
+	content="summary_large_image">
+<meta name="twitter:title" 
+	content="Le monde en première page">
+<meta name="twitter:description" 
+	content="Ce que disent les grands journaux du monde">
+<meta name="twitter:image" 
+	content="https://infovraies.info/Images/globalnews.png">
+<meta name="twitter:image:alt" 
+	content="Infographie">
+
+<!-- =========================================================================================== -->
+
     <!-- CSS principal -->
     <link rel="stylesheet" href="css/MyCss.css">
 
@@ -583,7 +614,57 @@
         });
 
     </script>
-   
+  	
+	
+<script>
+
+function partagerFacebook() {
+    const url = encodeURIComponent(window.location.href);
+
+    window.open(
+        "https://www.facebook.com/sharer/sharer.php?u=" + url,
+        "_blank"
+    );
+}
+
+function partagerX() {
+    const url = encodeURIComponent(window.location.href);
+
+    const texte = encodeURIComponent(
+        "Ce que disent les grands journaux du monde ?"
+    );
+
+    window.open(
+        "https://twitter.com/intent/tweet?text=" + texte + "&url=" + url,
+        "_blank"
+    );
+}
+
+function partagerWhatsApp() {
+    const url = encodeURIComponent(window.location.href);
+
+    const texte = encodeURIComponent(
+        "Ce que disent les grands journaux du monde: "
+    );
+
+    window.open(
+        "https://api.whatsapp.com/send?text=" + texte + url,
+        "_blank"
+    );
+}
+
+function copierLien() {
+    navigator.clipboard.writeText(window.location.href)
+        .then(function () {
+            alert("Lien de l'article copié !");
+        })
+        .catch(function () {
+            alert("Impossible de copier le lien.");
+        });
+}
+
+</script>
+    
 </body>
 
 </html>
