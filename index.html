@@ -5,25 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Infovraies || Le monde en première page</title>
-
-				<!--============================ des balises pour le partage sur les reseaux ================= -->
+    <title>Infovraies || Index</title>
 	
+	
+	
+			<!--============================ des balises pour le partage sur les reseaux ================= -->
+	<!-- Open Graph : LinkedIn et autres réseaux -->
 <meta property="og:type"
-	content="website">
+	content="article">
 <meta property="og:title" 
 	content="Le monde en première page">
 <meta property="og:description" 
 	content="Ce que disent les grands journaux du monde">
 <meta property="og:image" 
-	content="https://infovraies.info/Images/globalnews-v2.PNG">
+	content="https://infovraies.info/Images/globalnews.png">
 <meta property="og:image:secure_url" 
-	content="https://infovraies.info/Images/globalnews-v2.PNG">
+	content="https://infovraies.info/Images/globalnews.png">
 <meta property="og:image:type" content="image/png">
-
+<!--
 	<meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-
+-->
 <!-- X (anciennement Twitter) -->
 <meta name="twitter:card" 
 	content="summary_large_image">
@@ -32,10 +34,10 @@
 <meta name="twitter:description" 
 	content="Ce que disent les grands journaux du monde">
 <meta name="twitter:image" 
-	content="https://infovraies.info/Images/globalnews-v2.PNG">
+	content="https://infovraies.info/Images/globalnews.png">
 <meta name="twitter:image:alt" 
-	content="image global news">
-	
+	content="Infographie">
+
 <!-- =========================================================================================== -->
 
     <!-- CSS principal -->
@@ -52,11 +54,6 @@
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     >
-
-	<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
 </head>
 
 
@@ -77,6 +74,10 @@
         📅 Chargement de la date...
     </div>
 
+    <div class="header-content_index">
+        <!-- Logo ou autres éléments -->
+    </div>
+	<!--================================================================-->
     </header>
 
 
@@ -112,7 +113,7 @@
         Factuel
       </a>
 
-      <a href="/si_ai_expansion.html">
+      <a href="html/si_ai_expansion.html">
         <i class="fa-solid fa-microchip"></i>
         SI/AI en Expansion
       </a>
@@ -274,7 +275,6 @@
 
         <a href="#" onclick="partagerX(); return false;">
             <i class="fab fa-x-twitter"></i>
-            
         </a>
 
         <a href="#" onclick="partagerWhatsApp(); return false;">
@@ -290,8 +290,6 @@
     </div>
 
 </div>
-
-  
 
             <!-- =================================================
                  LE MONDE
@@ -336,12 +334,12 @@
             <!-- =================================================
                  ABC NEWS
                  ================================================= -->
-            <h2>📺 ABC News</h2>
+            <!-- <h2>📺 ABC News</h2>
 
             <div id="abc-feed" class="news-feed">
                 Loading...
             </div>
-
+			-->
 
             <!-- =================================================
                  FOX NEWS
@@ -356,11 +354,11 @@
             <!-- =================================================
                  LE NOUVELLISTE
                  ================================================= -->
-            <h2>📰 Lenouvelliste</h2>
+            <!-- <h2>📰 Lenouvelliste</h2>
 
-            <div id="nouvelliste-feed" class="news-feed">
+           <div id="nouvelliste-feed" class="news-feed">
                 Chargement...
-            </div>
+            </div> -->
 
 
             <!-- =================================================
@@ -394,63 +392,66 @@
                 ====================================================
                 */
 
-                function loadRSS(rssUrl, containerId, loadingText = "Chargement...") {
+                
+/*
+====================================================
+FONCTION POUR CHARGER UN FLUX RSS VIA VERCEL
+====================================================
+*/
 
-                    const container = document.getElementById(containerId);
+async function loadRSS(
+    rssUrl,
+    containerId,
+    loadingText = "Chargement..."
+) {
+    const container = document.getElementById(containerId);
 
-                    container.innerHTML = loadingText;
+    if (!container) {
+        console.error("Conteneur introuvable :", containerId);
+        return;
+    }
 
-                    fetch(
-                        'https://api.rss2json.com/v1/api.json?rss_url='
-                        + encodeURIComponent(rssUrl)
-                    )
+    container.textContent = loadingText;
 
-                    .then(response => response.json())
+    try {
+        const response = await fetch(
+            "/api/rss?url=" + encodeURIComponent(rssUrl)
+        );
 
-                    .then(data => {
+        const data = await response.json();
 
-                        container.innerHTML = "";
+        if (!response.ok || data.status !== "ok") {
+            throw new Error(
+                data.message || `Erreur HTTP ${response.status}`
+            );
+        }
 
-                        if (!data.items || data.items.length === 0) {
+        container.replaceChildren();
 
-                            container.innerHTML =
-                                "Aucun titre disponible.";
+        if (!Array.isArray(data.items) || data.items.length === 0) {
+            container.textContent = "Aucun titre disponible.";
+            return;
+        }
 
-                            return;
-                        }
+        data.items.slice(0, 5).forEach((item, index) => {
+            const link = document.createElement("a");
 
-                        data.items.slice(0, 5).forEach((item, index) => {
+            link.href = item.link;
+            link.textContent = `${index + 1}. ${item.title}`;
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
 
-                            const link =
-                                document.createElement("a");
+            container.appendChild(link);
+            container.appendChild(document.createElement("br"));
+        });
 
-                            link.href = item.link;
+    } catch (error) {
+        console.error(`Erreur RSS (${containerId}) :`, error);
 
-                            link.textContent =
-                                `${index + 1}. ${item.title}`;
-
-                            link.target = "_blank";
-
-                            link.rel = "noopener noreferrer";
-
-                            container.appendChild(link);
-
-                        });
-
-                    })
-
-                    .catch(error => {
-
-                        container.innerHTML =
-                            "Erreur de chargement des titres.";
-
-                        console.error(
-                            "Erreur RSS :",
-                            error
-                        );
-
-                    });
-                }
+        container.textContent =
+            "Erreur de chargement des titres.";
+    }
+}
 
 
                 /*
@@ -459,11 +460,11 @@
                 ====================================================
                 */
 
-                loadRSS(
-                    'http://feeds.bbci.co.uk/news/rss.xml',
-                    'bbc-feed',
-                    'Chargement des titres...'
-                );
+           
+				loadRSS(
+				'https://feeds.bbci.co.uk/news/world/rss.xml',
+				'bbc-feed'
+				);
 
 
                 loadRSS(
@@ -477,18 +478,16 @@
                     'france24-feed'
                 );
 
+				loadRSS(
+				'https://moxie.foxnews.com/google-publisher/latest.xml',
+				'fox-feed'
+				);
 
-                loadRSS(
-                    'https://feeds.foxnews.com/foxnews/latest',
-                    'fox-feed'
-                );
-
-
-                loadRSS(
-                    'https://abcnews.go.com/abcnews/topstories',
-                    'abc-feed'
-                );
-
+				/*
+               loadRSS(
+               'https://feeds.abcnews.com/abcnews/topstories',
+               'abc-feed'
+                ); */
 
                 loadRSS(
                     'https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml',
@@ -497,10 +496,10 @@
                 );
 
 
-                loadRSS(
+                 /*loadRSS(
                     'https://lenouvelliste.com/rss/une',
                     'nouvelliste-feed'
-                );
+                );*/
 
             </script>
 
@@ -643,7 +642,8 @@
         });
 
     </script>
-  	
+	
+	
 	
 <script>
 
@@ -693,7 +693,7 @@ function copierLien() {
 }
 
 </script>
-    
+   
 </body>
 
 </html>
