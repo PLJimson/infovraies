@@ -1784,3 +1784,337 @@ footer a:hover {
         padding: 20px 10px;
     }
 }
+
+
+/**************************************************************
+Css pour la page factuel avec les lien sur forme de carte
+
+**************************************************************/
+
+/* ==================================================
+   INFO VRAIES - CATALOGUE DES ARTICLES FACTUELS
+   À ajouter à la fin de MyCss.css
+   ================================================== */
+
+/* Structure générale : vidéos à gauche, articles à droite */
+
+.factual-layout {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.75fr)
+                           minmax(0, 2fr);
+    gap: 25px;
+    align-items: start;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 25px 20px;
+    box-sizing: border-box;
+}
+
+/* Colonne des vidéos */
+
+.factual-videos {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.factual-videos .box-item {
+    width: 100%;
+    margin-bottom: 22px;
+    padding: 12px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+.factual-videos .box-item p {
+    margin: 0 0 12px;
+    color: #17365d;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.factual-videos video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #111111;
+}
+
+/* Colonne des articles */
+
+.factual-articles {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.factual-heading {
+    margin-bottom: 22px;
+}
+
+.factual-heading h1 {
+    margin: 0 0 12px;
+    color: #17365d;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.3;
+}
+
+.factual-heading h1 i {
+    margin-right: 8px;
+}
+
+.factual-heading p {
+    color: #555555;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Partage */
+
+.factual-share {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f5f7fa;
+    border-radius: 10px;
+}
+
+.factual-share h3 {
+    margin-top: 0;
+    color: #17365d;
+}
+
+.factual-share .social-links-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.factual-share .social-links-list a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 12px;
+    color: #17365d;
+    text-decoration: none;
+    border-radius: 6px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+}
+
+.factual-share .social-links-list a:hover {
+    background: #e8eef7;
+}
+
+/* Une grande carte par ligne */
+
+.factual-card {
+    display: block;
+    width: 100%;
+    margin: 0 0 25px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #dedede;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+    box-sizing: border-box;
+}
+
+.factual-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.13);
+}
+
+/* Toute la carte est cliquable */
+
+.factual-card-link {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+
+.factual-card-link:focus-visible {
+    outline: 3px solid #1769aa;
+    outline-offset: -3px;
+}
+
+/* Photo de l'article */
+
+.factual-card-image {
+    display: block;
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: center;
+    background: #eeeeee;
+}
+
+/* Texte de la carte */
+
+.factual-card-content {
+    padding: 22px 24px;
+}
+
+.factual-category {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 5px 10px;
+    color: #ffffff;
+    background: #17365d;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.factual-card-content h2 {
+    margin: 0 0 12px;
+    color: #17365d;
+    font-size: clamp(20px, 2.4vw, 27px);
+    line-height: 1.4;
+}
+
+.factual-card-content p {
+    margin: 0 0 18px;
+    color: #444444;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.factual-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: #087a50;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.factual-card-link:hover .factual-read-more {
+    color: #045c3b;
+    text-decoration: underline;
+}
+
+/* Informations au bas de chaque carte */
+
+.factual-card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    padding: 13px 24px;
+    color: #666666;
+    background: #f7f8fa;
+    border-top: 1px solid #eeeeee;
+    font-size: 13px;
+}
+
+.factual-card-footer span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* Tablettes */
+
+@media (max-width: 900px) {
+
+    .factual-layout {
+        grid-template-columns: minmax(180px, 0.7fr)
+                               minmax(0, 1.5fr);
+        gap: 16px;
+        padding: 18px 12px;
+    }
+
+    .factual-card-image {
+        height: 220px;
+    }
+
+    .factual-card-content {
+        padding: 18px;
+    }
+
+}
+
+/* Téléphones : vidéos au-dessus, articles en dessous */
+
+@media (max-width: 650px) {
+
+    .factual-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 12px;
+    }
+
+    .factual-videos {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .factual-videos .box-item {
+        margin-bottom: 0;
+    }
+
+    .factual-articles {
+        width: 100%;
+    }
+
+    .factual-heading h1 {
+        font-size: 25px;
+    }
+
+    .factual-card {
+        margin-bottom: 20px;
+    }
+
+    .factual-card-image {
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .factual-card-content {
+        padding: 16px;
+    }
+
+    .factual-card-content h2 {
+        font-size: 21px;
+    }
+
+    .factual-card-content p {
+        font-size: 15px;
+    }
+
+    .factual-card-footer {
+        padding: 12px 16px;
+    }
+
+    .factual-share .social-links-list {
+        gap: 8px;
+    }
+
+}
+
+/* Accessibilité : réduire les animations si demandé */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .factual-card {
+        transition: none;
+    }
+
+    .factual-card:hover {
+        transform: none;
+    }
+
+}
+/*=================================================================*/
