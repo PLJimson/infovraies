@@ -12,10 +12,26 @@
       "source": "/ai-et-technologies",
       "destination": "/html/ai-et-technologies"
     },
+    ,
+    {
+      "source": "/AIClassique-VS-agentAI",
+      "destination": "/html/AIClassique-VS-agentAI"
+    }
+    ,
+    {
+      "source": "/usa_china",
+      "destination": "/html/usa_china"
+    }
+    ,
+    {
+      "source": "/ai-chevaldetroie",
+      "destination": "/html/ai-chevaldetroie"
+    }
     {
       "source": "/notre_mission",
       "destination": "/html/notre_mission"
     }
+    
     ,
     {
       "source": "/temoignages",
